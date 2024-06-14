@@ -1,0 +1,15 @@
+{% extends 'reviews/base.html' %}
+
+{% block page_title %}
+    List of review
+{% endblock page_title %}
+    
+
+{% block content %}
+    <ul>
+        {% for review in list_review %}
+            <li><a href="">{{ review.user_name }}</a> - (Rating {{ review.rating }})</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
+    
