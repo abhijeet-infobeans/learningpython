@@ -1,0 +1,35 @@
+{% extends 'book_outlet/base.html' %}
+
+
+{% block page_title %}
+{{ book.title }}
+{% endblock page_title %}
+    
+
+{% block content %}
+    <table width="50%" border="1">
+        <tr>
+            <td>Title</td>
+            <td>{{ book.title }}</td>
+        </tr>
+        <tr>
+            <td>Rating</td>
+            <td>{{ book.rating }}</td>
+        </tr>
+        <tr>
+            <td>Author</td>
+            <td>{{ book.author }}</td>
+        </tr>
+        <tr>
+            <td>Is Bestseller?</td>
+            <td>
+                {% if book.is_bestselling %}
+                    Yes
+                {% else %}
+                    No
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+{% endblock content %}
+    

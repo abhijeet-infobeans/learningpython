@@ -1,0 +1,19 @@
+{% extends 'book_outlet/base.html' %}
+
+{% block page_title %}
+    My Book Store
+{% endblock page_title %}
+    
+
+{% block content %}
+    <h2>My Book List</h2>
+    <ul>
+        {% for book in list_books %}
+        <li><a href="{% url 'book-detail' book.slug %}">{{ book.title }} - ({{ book.rating }})</a></li>
+        {% endfor %}
+    </ul>
+    <hr/>
+    <p>Total number of books: {{ total_no_of_books }}</p>
+    <p>Average rating of books: {{ average_book_rating.rating__avg }}</p>
+{% endblock content %}
+    
